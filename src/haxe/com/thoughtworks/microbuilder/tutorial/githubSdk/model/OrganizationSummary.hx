@@ -1,7 +1,7 @@
 package com.thoughtworks.microbuilder.tutorial.githubSdk.model;
 
 @:final
-class OrgnizationSummary {
+class OrganizationSummary {
 
   public function new() {}
 
