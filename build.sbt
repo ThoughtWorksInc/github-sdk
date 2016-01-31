@@ -1,3 +1,5 @@
+enablePlugins(MicrobuilderJsSdk)
+
 enablePlugins(MicrobuilderJavaSdk)
 
 organization := "com.thoughtworks.microbuilder.tutorial"
