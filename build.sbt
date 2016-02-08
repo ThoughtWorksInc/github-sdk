@@ -25,24 +25,19 @@ releasePublishArtifactsAction := PgpKeys.publishSigned.value
 
 import ReleaseTransformations._
 
-releaseProcess := Seq[ReleaseStep](
-  checkSnapshotDependencies,
-  inquireVersions,
-  runClean,
-  runTest,
-  setReleaseVersion,
-  commitReleaseVersion,
-  tagRelease,
-  publishArtifacts,
-  setNextVersion,
-  commitNextVersion,
-  releaseStepCommand("sonatypeRelease"),
-  pushChanges
-)
+releaseProcess := {
+  releaseProcess.value.patch(releaseProcess.value.indexOf(publishArtifacts), Seq[ReleaseStep](releaseStepTask(publish in Haxe)), 0)
+}
+
+releaseProcess := {
+  releaseProcess.value.patch(releaseProcess.value.indexOf(pushChanges), Seq[ReleaseStep](releaseStepCommand("sonatypeRelease")), 0)
+}
 
 releaseUseGlobalVersion := true
 
 releaseCrossBuild := true
+
+haxelibReleaseNote := "Initial release."
 
 crossScalaVersions := Seq("2.10.6", "2.11.7")
 
