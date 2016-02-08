@@ -35,11 +35,13 @@ releaseProcess := {
 
 releaseUseGlobalVersion := true
 
-releaseCrossBuild := true
+releaseCrossBuild := false
+
+crossPaths := false
+
+autoScalaLibrary := false
 
 haxelibReleaseNote := "Initial release."
-
-crossScalaVersions := Seq("2.10.6", "2.11.7")
 
 scmInfo := Some(ScmInfo(
   url(s"https://github.com/ThoughtWorksInc/${name.value}"),
