@@ -7,6 +7,7 @@ import com.thoughtworks.microbuilder.tutorial.githubSdk.model.OrganizationSummar
 @:nativeGen
 interface IOrganizationService {
 
+  @:requestHeader("User-Agent", "organization-list-cli")
   @:route("GET", "users/{username}/orgs")
   function listUserOrganizations(username:String):Future<Vector<OrganizationSummary>>;
 
