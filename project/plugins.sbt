@@ -1,4 +1,4 @@
-addSbtPlugin("com.thoughtworks.microbuilder" % "sbt-microbuilder" % "4.0.5")
+addSbtPlugin("com.thoughtworks.microbuilder" % "sbt-microbuilder" % "4.0.6")
 
 addSbtPlugin("com.github.gseitz" % "sbt-release" % "1.0.1")
 
