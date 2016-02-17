@@ -2,6 +2,8 @@ enablePlugins(MicrobuilderJsSdk)
 
 enablePlugins(MicrobuilderJavaSdk)
 
+enablePlugins(AllHaxePlugins)
+
 organization := "com.thoughtworks.microbuilder.tutorial"
 
 sonatypeProfileName := "com.thoughtworks.microbuilder"
@@ -49,3 +51,11 @@ scmInfo := Some(ScmInfo(
   Some(s"scm:git:git@github.com:ThoughtWorksInc/${name.value}.git")))
 
 licenses += "MIT" -> url("http://opensource.org/licenses/MIT")
+
+for {
+  c <- AllHaxeConfigurations
+} yield {
+  libraryDependencies ++= microbuilderHaxeDependencies(c)
+}
+
+isLibrary := true
