@@ -4,7 +4,6 @@ import jsonStream.rpc.Future;
 import haxe.ds.Vector;
 import com.thoughtworks.microbuilder.tutorial.githubSdk.model.OrganizationSummary;
 
-@:nativeGen
 interface IOrganizationService {
 
   @:requestHeader("User-Agent", "organization-list-cli")
